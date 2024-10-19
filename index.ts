@@ -67,7 +67,7 @@ const properties : {
         code: number;
         country: string;
     };
-    contact: string;
+    contact: [number, string];
     isAvailable: boolean;
 }[] = [
     {
@@ -80,7 +80,7 @@ const properties : {
             code: 45632,
             country: 'South Africa'
         },
-        contact: 'maryMantji@gmail.com',
+        contact: [+27689765432,'maryMantji@gmail.com'],
         isAvailable: true  
     },
     {
@@ -93,7 +93,7 @@ const properties : {
             code: 343903,
             country: 'South Africa'
         },
-        contact: 'guyMan@hotmail.com',
+        contact: [+27987543298,'guyMan@hotmail.com'],
         isAvailable: false 
     },
     {
@@ -106,7 +106,7 @@ const properties : {
             code: 35433,
             country: 'South Africa',
         },
-        contact: 'andreaSefakoe@gmail.com',
+        contact: [+27075824361,'andreaSefakoe@gmail.com'],
         isAvailable: true
     }
 ]
