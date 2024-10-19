@@ -55,6 +55,24 @@ const you: {
     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
 
+const properties : {
+    image: string;
+    title: string;
+    price: number;
+    location: {
+        firstLine: string;
+        city: string;
+        code: number;
+        country: string;
+    };
+    contact: string;
+    isAvailable: boolean;
+}[] = [
+    {
+        
+    }
+]
+
 function populateUser(isReturning : boolean, userName : string ) {
     if (isReturning){
         returningUserDisplay.innerHTML = 'back'
