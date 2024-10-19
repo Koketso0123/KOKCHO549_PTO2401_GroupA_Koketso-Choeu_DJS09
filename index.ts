@@ -57,7 +57,7 @@ interface Property {
         firstLine: string;
         city: string;
         code: number | string;
-        country: string
+        country: Country
     }
     contact: [ number, string];
     isAvailable: boolean;
@@ -162,7 +162,15 @@ class MainProperty {
     }
 }
 
-let yourMainProperty = new MainProperty()
+let yourMainProperty = new MainProperty(
+    'images/House-2.jpg', 
+    'Italian House',
+    [{
+        name: 'Katlego',
+        stars: 5,
+        loyaltyUser: LoyaltyUser.GOLD_USER,
+        date: '12-04-2021'
+    }] )
 
 const mainImageContainer = document.querySelector('.main-image')
 const image = document.createElement('img')
