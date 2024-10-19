@@ -102,6 +102,19 @@ const properties : Property[] = [
         },
         contact: [+27075824361,'andreaSefakoe@gmail.com'],
         isAvailable: true
+    },
+    {
+        image: 'images/Hotel-1.jpg',
+        title: 'Malique Hotel',
+        price: 55,
+        location: {
+            firstLine: 'Room 4',
+            city: 'Malique',
+            code: 45334,
+            country: 'Mozambique'
+        },
+        contact: [ +60349822083, 'lee34@gmail.com'],
+        isAvailable: false
     }
 ]
 
