@@ -69,7 +69,43 @@ const properties : {
     isAvailable: boolean;
 }[] = [
     {
-        
+        image: 'images/sofa-logo.png',
+        title: 'Khayelitsha Shack',
+        price: 45,
+        location: {
+            firstLine: 'shack 37',
+            city: 'Cape Town',
+            code: 45632,
+            country: 'South Africa'
+        },
+        contact: 'maryMantji@gmail.com',
+        isAvailable: true  
+    },
+    {
+        image: 'images/sofa-logo.png',
+        title: 'Stellenbosch Cottage',
+        price: 34,
+        location: {
+            firstLine: 'no 23',
+            city: 'Cape Town',
+            code: 343903,
+            country: 'South Africa'
+        },
+        contact: 'guyMan@hotmail.com',
+        isAvailable: false 
+    },
+    {
+        image: 'images/sofa-logo.png',
+        title: 'Cape Flat',
+        price: 23,
+        location: {
+            firstLine: 'flat 15',
+            city: 'Cape Town',
+            code: 35433,
+            country: 'South Africa',
+        },
+        contact: 'andreaSefakoe@gmail.com',
+        isAvailable: true
     }
 ]
 
