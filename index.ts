@@ -2,71 +2,53 @@
 // Write a function that will only accept numbers and attend to 
 // all TypeScript weakness flags.
 // : number
-const returningUserDisplay = document.querySelector('#returning-user')
-const userNameDisplay = document.querySelector('#user')
-const reviewTotalDisplay = document.querySelector('#reviews')
+import { showReviewTotal, populateUser } from './utils'
+import { Permissions,LoyaltyUser } from './enums'
 
 const propertyContainer = document.querySelector('.properties')
 const footer = document.querySelector('.footer')
 
+
 let isOpen : boolean
 
-const reviews : {
+const reviews : (
+    {
     name: string;
     stars: number;
-    loyaltyUser: boolean;
+    loyaltyUser: LoyaltyUser;
+    date: string;   
+} |
+{
+    name: string;
+    stars: number;
+    loyaltyUser: LoyaltyUser;
     date: string;
-}[]= [
+    description: string;
+}
+)[]= [
     {
         name: 'Sheia',
         stars: 5,
-        loyaltyUser: true,
+        loyaltyUser: LoyaltyUser.GOLD_USER,
         date: '01-04-2021'
     },
     {
         name: 'Andrzej',
         stars: 3,
-        loyaltyUser: false,
+        loyaltyUser: LoyaltyUser.BRONZE_USER,
         date: '28-03-2021'
     },
     {
         name: 'Omar',
         stars: 4,
-        loyaltyUser: true,
-        date: '27-03-2021'
+        loyaltyUser: LoyaltyUser.SILVER_USER,
+        date: '27-03-2021',
+        description:"not great",
     },
 ]
 
-function showReviewTotal (value : number, reviewer: string, isLoyalty : boolean) {
-    const iconDisplay = isLoyalty ? '⭐' : ''
-    reviewTotalDisplay.innerHTML = 'review total ' + value.toString() + '| last reviewed by ' + reviewer + ' ' + iconDisplay
-}
-
-showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
-
-// User
-// const you: {
-//     firstName: string;
-//     lastName: string;
-//     isReturning: boolean;
-//     age: number;
-//     stayedAt: string[]
-// } = {
-//     firstName: 'Bobby',
-//     lastName: 'Brown',
-//     isReturning: true,
-//     age: 35,
-//     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
-// }
-
-const ADMIN = 'admin'
-const READ_ONLY = 'read-only'
 
 
-enum Permissions {
-    ADMIN,
-    READ_ONLY
-}
 
 const you = {
     firstName: 'Bobby',
@@ -75,10 +57,6 @@ const you = {
     isReturning: true,
     age: 35,
     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
-}
-
-if (you.permissions === 'admin') {
-    //show
 }
 
 const properties : {
@@ -135,14 +113,9 @@ const properties : {
     }
 ]
 
-function populateUser(isReturning : boolean, userName : string ) {
-    if (isReturning){
-        returningUserDisplay.innerHTML = 'back'
-    }
-    userNameDisplay.innerHTML = userName
-}
-
 populateUser(you.isReturning, you.firstName)
+showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
+
 
 for (let i = 0; i < properties.length; i++) {
     const card = document.createElement('div')
