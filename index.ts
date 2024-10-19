@@ -49,19 +49,21 @@ const you = {
     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
 
-const properties : {
+interface Property {
     image: string;
     title: string;
-    price: number;
+    price: Price;
     location: {
         firstLine: string;
         city: string;
-        code: number;
-        country: Country;
-    };
-    contact: [number, string];
+        code: number | string;
+        country: string
+    }
+    contact: [ number, string];
     isAvailable: boolean;
-}[] = [
+}
+
+const properties : Property[] = [
     {
         image: 'images/House-1.jpg',
         title: 'Khayelitsha Shack',
@@ -153,9 +155,16 @@ class MainProperty {
     src: string
     title: string
     reviews: Review[]
-    constructor(src, title, reviews) {
+    constructor(src: string, title: string, reviews: Review[]) {
         this.src = src
         this.title = title
         this.reviews = reviews
     }
 }
+
+let yourMainProperty = new MainProperty()
+
+const mainImageContainer = document.querySelector('.main-image')
+const image = document.createElement('img')
+image.setAttribute('src', yourMainProperty.src)
+mainImageContainer.appendChild(image)
