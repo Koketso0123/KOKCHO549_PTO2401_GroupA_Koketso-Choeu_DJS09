@@ -2,10 +2,9 @@
 // Write a function that will only accept numbers and attend to 
 // all TypeScript weakness flags.
 // : number
-import { showReviewTotal, populateUser } from './utils' //multiple exports
-import { Permissions,LoyaltyUser } from './enums' //multiple exports
-import { Price, Country } from './types' //multiple exports
-import  Review  from './interfaces'  //default export
+import { showReviewTotal, populateUser } from './utils' 
+import { Permissions,LoyaltyUser } from './enums' 
+import { Review, Property }  from './interfaces'
 
 const propertyContainer = document.querySelector('.properties')
 const reviewContainer = document.querySelector('.reviews')
@@ -49,19 +48,6 @@ const you = {
     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
 
-interface Property {
-    image: string;
-    title: string;
-    price: Price;
-    location: {
-        firstLine: string;
-        city: string;
-        code: number | string;
-        country: Country
-    }
-    contact: [ number, string];
-    isAvailable: boolean;
-}
 
 const properties : Property[] = [
     {
