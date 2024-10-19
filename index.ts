@@ -2,10 +2,10 @@
 // Write a function that will only accept numbers and attend to 
 // all TypeScript weakness flags.
 // : number
-import { showReviewTotal, populateUser } from './utils'
-import { Permissions,LoyaltyUser } from './enums'
-import { Price, Country } from './types'
-import { Review } from './interfaces'
+import { showReviewTotal, populateUser } from './utils' //multiple exports
+import { Permissions,LoyaltyUser } from './enums' //multiple exports
+import { Price, Country } from './types' //multiple exports
+import  Review  from './interfaces'  //default export
 
 const propertyContainer = document.querySelector('.properties')
 const reviewContainer = document.querySelector('.reviews')
